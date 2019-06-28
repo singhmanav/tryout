@@ -3,9 +3,7 @@ node {
     checkout scm
 
     stage 'Build'
-	echo "PATH = ${PATH}"
-        echo "M2_HOME = ${M2_HOME}"
-      	buildStatus= sh returnStatus: true, script:"${M2_HOME}/bin/mvn clean package" 
+      	buildStatus= sh returnStatus: true, script:"mvn clean package" 
       	echo "Build status : ${buildStatus}"
 
     stage 'Record JUnit Results'
