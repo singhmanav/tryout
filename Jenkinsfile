@@ -1,3 +1,5 @@
+pipeline {
+	agent any
 node {
     stage 'Checkout'
     checkout scm
@@ -15,3 +17,4 @@ node {
 	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/jacoco', reportFiles: 'index.html', reportName: 'Code Coverage', reportTitles: ''])
 
 } 
+}
