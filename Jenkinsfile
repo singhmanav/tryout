@@ -3,7 +3,9 @@ node {
     checkout scm
 
     stage 'Build'
-	def mvnHome = tool 'M3'
+	echo "PATH = ${PATH}"
+	echo "M2_HOME = ${M2_HOME}"
+	def mvnHome = tool 'M2'
       	buildStatus= sh returnStatus: true, script:"${mvnHome}/bin/mvn clean package" 
       	echo "Build status : ${buildStatus}"
 
